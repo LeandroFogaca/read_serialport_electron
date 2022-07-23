@@ -5,6 +5,10 @@ const { ReadlineParser } = require('@serialport/parser-readline')
 var Ports;
 var portselected;
 var value;
+var baudRates = [300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200]
+let flagConnected;
+
+
 
 async function listSerialPorts() {
   await SerialPort.list().then((ports, err) => {
@@ -29,9 +33,9 @@ async function listSerialPorts() {
     }
     
 });
-    if (ports.length === 0) {
-        console.log(' No ports discovered');
-    }
+    // if (ports.length === 0) {
+    //     console.log(' No ports discovered');
+    // }
     
 }  
 
@@ -76,7 +80,7 @@ function updateList() {
 function connect() {
     
     let p = document.getElementById('port-select').value
-    let baudRate = parseInt(document.getElementById('baudRate').value)
+    let baudRate = parseInt(document.getElementById('selbaudRate').value)
 
     portselected = new SerialPort({
         path: p,
@@ -95,8 +99,13 @@ function connect() {
   portselected.on('open', function() {
       
       console.log('PORTA FOI ABERTA');
+
+    flagConnected = true;
       
     })
+
+
+
 }
 
 
@@ -111,9 +120,9 @@ function ReadData() {
         value = data
     })
     }
-
-}
     
+}
+
 
 function updateValue(params) {
     
@@ -128,17 +137,20 @@ function updateValue(params) {
 function updateStatus() {
     
     let e = document.getElementById('status')
-
-    if (portselected.isOpen == true) {
+    
+    if (flagConnected == true) {
         
-        e.innerHTML = "Conectado!"
-    } else {
+        if (portselected.isOpen == true) {
+            
+            e.innerHTML = "Conectado!"
+        } else {
+            
+            flagConnected = false    
+            e.innerHTML = "Desconectado!"
+        }
+            
         
-        
-        e.innerHTML = "Desconectado!"
-
     }
-
 
     // console.log('teste');
 
@@ -161,7 +173,8 @@ var interval = setInterval(()=>{
 
     updateValue(value);
 
-    updateStatus()
+    
+        updateStatus()
 
 
 },200)
