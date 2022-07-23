@@ -8,40 +8,66 @@
     <title>Interface serial port!</title>
   </head>
   <body>
-    <h1>IHM to read serial port!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <h2>Configuration</h2>
+    <header>
+      <h1>IHM to read serial port!</h1>
+    </header>
+    
 
-    <div></div>
-    <button id="listports">Porcurar Portas serial</button>
+    <div class="grid-container">
 
-    <label for="pet-select">Escolha a Porta:</label>
+      <div class="config">
+        
+        <h2>Configuration</h2>
+        
+        <div>
+          <button id="listports">Porcurar Portas serial</button>
+          <ul>Portas encontradas: <span id="ports-list">
+          </span>
+          </ul>
 
-  <select name="ports" id="port-select">
-      <option value="">--Selecione a Porta--</option>
+        </div>
+          
+       <div>
+         <label>Escolha a Porta:</label>
+         <select name="ports" id="port-select">
+           <option value="">--Selecione a Porta--</option>
+          </select>
+       </div>
 
-  </select>
-  <label>baudRate:</label>
-  <input id="baudRate" type="number" value="9600"></input>
-  <button id="connect">Conectar</button>
-  <label id="status"></label>
+        <div>
+          <label>baudRate:</label>
+          <input id="baudRate" type="number" value="9600"></input>
+        </div>
+
+        <div>
+          <label>Status: </label>
+          <label id="status"></label>
+        </div>
+        
+        <div>
+          <button id="connect">Conectar</button>
+          <button id="start">Iniciar leitura</button>
+        </div>
+  </div>
+  
+  <div class="dashboard">
+    
+    <label>Valer lido na porta serial:</label>
+    <label id="output"></label>
+
+  </div>
 
 
 
-    <ul>Portas encontradas: <strong id="ports-list"></strong></ul>
-   
 
-    <div>
-
-      <button id="start">Iniciar leitura</button>
-      <label>Valer lido na porta serial:</label>
-      <label id="output"></label>
-    </div>
-
-
+  </div class="flx-container">
+    <footer>
+      We are using Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>.
+    </footer>
+    
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>

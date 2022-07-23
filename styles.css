@@ -1,3 +1,59 @@
 /* styles.css */
 
 /* Add styles here to customize the appearance of your app */
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+header {
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 90%;
+  }
+
+/* Style the footer */
+footer {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 5%;
+}
+
+/* Create two columns/boxes that floats next to each other */
+.config {
+    /* display: flex; */
+    float: left;
+    width: auto;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    min-height: 100%;
+    align-items: center;
+  }
+
+.config > div {
+    padding: 10px;
+}
+
+.grid-container {
+    display: flex;
+    height: 500px;
+    padding: 10px;
+    flex-direction: row;
+
+}
+
+.dashboard {
+    display: flex;
+    text-align: center;
+    width: 100% ;
+    align-items: center;
+    justify-content: center;
+}
