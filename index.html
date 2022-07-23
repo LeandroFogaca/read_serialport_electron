@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Interface serial port!</title>
+  </head>
+  <body>
+    <h1>IHM to read serial port!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+
+    <h2>Configuration</h2>
+
+    <div></div>
+    <button id="listports">Porcurar Portas serial</button>
+
+    <label for="pet-select">Escolha a Porta:</label>
+
+  <select name="ports" id="port-select">
+      <option value="">--Selecione a Porta--</option>
+
+  </select>
+  <label>baudRate:</label>
+  <input id="baudRate" type="number" value="9600"></input>
+  <button id="connect">Conectar</button>
+  <label id="status"></label>
+
+
+
+    <ul>Portas encontradas: <strong id="ports-list"></strong></ul>
+   
+
+    <div>
+
+      <button id="start">Iniciar leitura</button>
+      <label>Valer lido na porta serial:</label>
+      <label id="output"></label>
+    </div>
+
+
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
