@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "read_serialport",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A minimal Electron application to read a serial port of arduino",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/LeandroFogaca/read_serialport_electron",
   "keywords": [
     "Electron",
     "quick",
@@ -14,10 +14,11 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Leandro Fogaça",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^19.0.8",
+    "electron-packager": "^15.5.1",
     "electron-rebuild": "^3.2.8"
   },
   "dependencies": {
