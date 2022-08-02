@@ -19,7 +19,7 @@
   "devDependencies": {
     "electron": "^19.0.8",
     "electron-packager": "^15.5.1",
-    "electron-rebuild": "^3.2.8"
+    "electron-rebuild": "^3.2.9"
   },
   "dependencies": {
     "serialport": "^10.4.0"
