@@ -18,7 +18,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^19.0.8",
-    "electron-packager": "^15.5.1",
+    "electron-packager": "^17.0.0",
     "electron-rebuild": "^3.2.8"
   },
   "dependencies": {
